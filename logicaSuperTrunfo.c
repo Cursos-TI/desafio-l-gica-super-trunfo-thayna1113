@@ -4,152 +4,109 @@
 
 
 int main() {
-
-    printf("**Desafio Super Trunfo - Países**\n");
     
-    char estado1, estado2;
-    char codigo1[5], codigo2[5];
-    char cidade1[50], cidade2[50];
-    int populacao1, populacao2;
-    float area1, area2;
-    float pib1, pib2;
-    int pontosturisticos1, pontosturisticos2;
-    float pib_per_capital1, pib_per_capital2;
-    float densidade_populacional1, densidade_populacional2;
-    int opcao;
-
-  
-
-    //declaraçao de variaveis carta 1
-    printf("digite o codigo da carta1:\n");
-    scanf(" %s", codigo1);
-    printf("digite o estado:\n");
-    scanf(" %c", &estado1);
-    printf("digite a cidade:\n");
-    scanf(" %s", cidade1);
-    printf("digite a populacao:\n");
-    scanf("%d", &populacao1);
-    printf("digite a area:\n");
-    scanf("%f", &area1);
-    printf("digite o pib:\n");
-    scanf("%f", &pib1);
-    printf("digite o numero de pontos turisticos:\n");
-    scanf("%d", &pontosturisticos1);
+  //variaveis a ser ultilizada
+    char estado1[3] = "01", estado2[3] = "02";
+    char codigo1[5] = "a", codigo2[5] = "b";
+    char cidade1[50] = "saopaulo", cidade2[50] = "riodejaneiro";
+    int populacao1 = 12325000, populacao2 = 6748000;
+    float area1 = 1521.11, area2 = 1200.25;
+    float pib1 = 699.28, pib2 = 300.50;
+    int pontosturisticos1 = 50, pontosturisticos2 = 30;
+    float pib_per_capital1 = 56724.32, pib_per_capital2 = 44532.91;
+    float densidade_populacional1 = 8102.47, densidade_populacional2 = 5622.24;
+    int opcao1, opcao2; 
+    int resultado1, resultado2;
     
 
-//Calcular Densidade Populacional e PIB per capita
-densidade_populacional1 = populacao1 / area1;
-pib_per_capital1 = pib1 / populacao1;
+  printf("**Bem vindo oa jogo super trunfo**\n");
 
-printf("a densidade populacional é:%2f \n", densidade_populacional1);
-printf("o pib per capital é:%2f \n", pib_per_capital1);
-
-  printf("segunda carta\n");
-
-//declaraçao de variaveis carta 2
-  printf("digite o codigo da carta2:\n");
-  scanf(" %s", codigo2);
-  printf("digite o estado:\n");
-  scanf(" %c", &estado2);
-  printf("digite a cidade:\n");
-  scanf(" %s", cidade2);
-  printf("digite a populacao:\n");
-  scanf("%d", &populacao2);
-  printf("digite a area:\n");
-  scanf("%f", &area2);
-  printf("digite o pib:\n");
-  scanf("%f", &pib2);
-  printf("digite o numero de pontos turisticos:\n");
-  scanf("%d", &pontosturisticos2);
-
-  densidade_populacional2 = populacao2 / area2;
-  pib_per_capital2 = pib2 / populacao2;
-
-  printf("a densidade populacional é:2%f \n", densidade_populacional2);
-  printf("o pib per capital é:%2f \n", pib_per_capital2);
-    
-
-  printf("escolha uma opçao:\n");
+  //opçao de comparação da primeira carta
+  printf("escolha a primeira opçao:\n");
   printf("1. populacao\n");
   printf("2. area\n");
   printf("3. pib\n");
   printf("4. pontosturisticos\n");
   printf("5. densidade\n");
-  scanf("%d", &opcao);
+  scanf("%d", &opcao1);
 
-
-  switch (opcao)
+  printf("Escolha a comparaçao:\n");
+ 
+  switch (opcao1)
   {
   case 1:
-    printf("populacao\n");
-    if(populacao1 > populacao2){
-      printf("São paulo  x  Rio de Janeiro\n");
-      printf("12325000 x 674800\n");
-      printf("são paulo venceu!!\n");
-    } else if(populacao1 < populacao2){
-      printf("rio de janeiro venceu!!\n");
-    } else{
-      printf("Empatou!!\n");
-    }
+    printf("População\n");
+    resultado1 = populacao1 > populacao2 ? 1 : 0;
     break;
-
-  case 2:
-      printf("area\n");
-      if(area1 > area2){
-        printf("São paulo  x  Rio de Janeiro\n");
-        printf("1521.11 x 1200.25\n");
-        printf("são paulo venceu!!\n");
-      } else if(area1 < area2){
-        printf("rio de janeiro venceu!!\n");
-      } else{
-        printf("Empatou!!\n");
-      }
-  break;
-
-  case 3:
-      printf("pib\n");
-      if(pib1 > pib2){
-        printf("São paulo  x  Rio de Janeiro\n");
-        printf("699.28 x 300.50\n");
-        printf("são paulo venceu!!\n");
-      } else if(pib1 < pib2){
-        printf("rio de janeiro venceu!!\n");
-      } else{
-        printf("Empatou!!\n");
-      }
-  break;
-
-  case 4:
-      printf("pontosturisticos\n");
-      if(pontosturisticos1 > pontosturisticos2){
-        printf("São paulo  x  Rio de Janeiro\n");
-        printf("50 x 30\n");
-        printf("são paulo venceu!!\n");
-      } else if(pontosturisticos1 < pontosturisticos2){
-        printf("rio de janeiro venceu!!\n");
-      } else{
-        printf("Empatou!!\n");
-      }
-  break;
-
-  case 5:
-      printf("densidade\n");
-      if(densidade_populacional1 < densidade_populacional2){
-        printf("são paulo venceu!!\n");
-      } else if(densidade_populacional1 > densidade_populacional2){
-        printf("São paulo  x  Rio de Janeiro\n");
-        printf("8102.635742 x 25622.162109\n");
-        printf("rio de janeiro venceu!!\n");
-      } else{
-        printf("Empatou!!\n");
-      }
-  break;
-
+    case 2:
+    printf("Area\n");
+    resultado1 = area1 > area2 ? 1 : 0;
+    break;
+    case 3:
+    printf("Pib\n");
+    resultado1 = pib1 > pib2 ? 1 : 0;
+    break;
+    case 4:
+    printf("Pontos turisticos\n");
+    resultado1 = pontosturisticos1 > pontosturisticos2 ? 1 : 0;
+    break;
+    case 5:
+    printf("Densidade\n");
+    resultado1 = densidade_populacional1 < densidade_populacional2 ? 1 : 0;
+    break;
   default:
-  printf("opçao invalida");
+  printf("Opção invalida!");
+    break;
+  }
+//opçao de comparação da segunda carta
+  printf("escolha a segunda opçao:\n");
+  printf("1. populacao\n");
+  printf("2. area\n");
+  printf("3. pib\n");
+  printf("4. pontosturisticos\n");
+  printf("5. densidade\n");
+  scanf("%d", &opcao2);
+
+  printf("Escolha a comparaçao:\n");
+
+if(opcao1 == opcao2){
+  printf("Voce escolheu a mesma opção!!"); //para evitar que rode com a mesma carta
+} else {
+  switch (opcao2)
+  {
+  case 1:
+    printf("População\n");
+    resultado2 = populacao1 > populacao2 ? 1 : 0;
+    break;
+    case 2:
+    printf("Area\n");
+    resultado2 = area1 > area2 ? 1 : 0;
+    break;
+    case 3:
+    printf("Pib\n");
+    resultado2 = pib1 > pib2 ? 1 : 0;
+    break;
+    case 4:
+    printf("Pontos turisticos\n");
+    resultado2 = pontosturisticos1 > pontosturisticos2 ? 1 : 0;
+    break;
+    case 5:
+    printf("Densidade\n");
+    resultado2 = densidade_populacional1 < densidade_populacional2 ? 1 : 0;
+    break;
+  default:
+  printf("Opção invalida!");//apenas para que o jogador saiba porque o jogo nao rodou
     break;
   }
 
+  if (resultado1 && resultado2){
+    printf("Parabéns voce ganhou!!\n");
+  } else if(resultado1 != resultado2){
+    printf("Empatou!!\n");
+  } else{
+    printf("Infelizmente, voce perdeu!!\n");
+  }
+}
 
     return 0;
 }
